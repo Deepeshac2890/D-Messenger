@@ -1,0 +1,16 @@
+<h1>All Articles are : </h1>
+<table>
+<thead>
+    <tr>Title</tr>
+    <tr>Description</tr>
+    <tr>Actions</tr>
+</thead>
+<tbody>
+<% @articles.each do|article| %>
+<tr>
+<td><%= article.title%></td>
+<td><%= article.description%></td>
+</tr>
+<% end %>
+</tbody>
+</table>
