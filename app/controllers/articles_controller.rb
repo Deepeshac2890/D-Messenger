@@ -25,7 +25,7 @@ class ArticlesController < ApplicationController
     def create
       @article = Article.new(article_params)
       # This has been added for now till we have authentication system in place
-      @article.user_id = User.first
+      @article.user = User.first
       @res = @article.save
       if (@res)
         flash[:notice]  = "Article was created successfully."
