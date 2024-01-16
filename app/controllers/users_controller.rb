@@ -1,16 +1,20 @@
 class UsersController < ApplicationController
+  include ApplicationHelper
   before_action :find_user, only: [:edit, :update, :show] 
   def new
     @user = User.new
   end
 
   def create
-    res = User.create(user_params)
+    user = User.new(user_params)
+    user.profile_image = gravatar_link(user_params[:email])
+    res = user.save
     if (res)
-      session[:user_id] = res.id
-      flash[:notice]  = "Hello #{res.username}, Welcome to AlphaBlog."
+      session[:user_id] = user.id
+      flash[:notice]  = "Hello #{user.username}, Welcome to AlphaBlog."
       redirect_to articles_path
     else
+      @user = user
       render 'new'
     end
   end

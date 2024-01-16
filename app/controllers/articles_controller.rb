@@ -3,6 +3,8 @@ class ArticlesController < ApplicationController
   include ApplicationHelper
 
     before_action :set_article, only: [:show, :edit, :update, :destroy]
+    before_action :require_same_user, only: [:edit, :update, :destroy]
+    before_action :require_login, except: [:show, :index, :home]
 
     def show
     end
@@ -65,5 +67,12 @@ class ArticlesController < ApplicationController
 
     def article_params
       params.require(:article).permit(:title, :description)
+    end
+
+    def require_same_user
+      if current_user != @user
+        flash[:alert] = "You are not authorized to do this action."
+        redirect_to root_path
+      end
     end
 end
