@@ -24,7 +24,9 @@
           </div>
             <div class="mt-5">
               <%= link_to "View profile", user, class: "btn btn-outline-success mr-3" %>
+              <% if logged_in? && current_user.id == user.id%>
               <%= link_to "Edit profile", edit_user_path(user), class: "btn btn-outline-info" %>
+              <% end %>
               <%# <h3 class="heading">Junior Product<br>Designer-Singapore</h3> %>
               <div class="mt-5">
                 <div class="mt-3"> <h5 class="d-flex align-items-center mb-0"><%= pluralize(user.articles.count, "article") %></h2></span> </div>

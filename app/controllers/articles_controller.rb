@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
   
+  include ApplicationHelper
+
     before_action :set_article, only: [:show, :edit, :update, :destroy]
 
     def show
@@ -13,6 +15,7 @@ class ArticlesController < ApplicationController
     end
 
     def home
+      redirect_to articles_path if logged_in?
     end
 
     def new
@@ -25,7 +28,7 @@ class ArticlesController < ApplicationController
     def create
       @article = Article.new(article_params)
       # This has been added for now till we have authentication system in place
-      @article.user = User.first
+      @article.user = current_user
       @res = @article.save
       if (@res)
         flash[:notice]  = "Article was created successfully."
