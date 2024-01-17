@@ -1,17 +1,53 @@
-<h1 class="text-center mt-4"><%= @user.username %>'s profile</h1>
-
-<%= gravatar_for @user, size: 200 %>
-
-<% if logged_in? && current_user.id == @user.id%>
-<div class="text-center mt-4">
-  <%= link_to "Edit your profile", edit_user_path(@user), class: "btn btn-outline-info" %>
+<div class="h-100 gradient-custom-2">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-lg-9 col-xl-7">
+        <div class="card">
+          <div class="rounded-top text-white d-flex flex-row" style="background: url('https://amymhaddad.s3.amazonaws.com/oriental-tiles.png'); height:200px;">
+            <div class="ms-4 mt-5 mr-4 d-flex flex-column" style="width: 150px;">
+              <img src=<%= gravatar_link(@user.email)%>
+                alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
+                style="width: 150px; z-index: 1">
+            </div>
+            <div class="ms-3" style="margin-top: 120px; margin-bottom: 100px;">
+              <h5><%= @user.username%></h5>
+              <% if logged_in? && current_user.id == @user.id%>
+                <%= link_to "Edit Profile", edit_user_path(@user), class: "btn btn-outline-info mb-4 edit-button" %>
+              <% end %>
+              <% if logged_in? && current_user.id == @user.id%>
+                <%= link_to "Delete Profile", user_path(@user), method: :delete, class: "btn btn-outline-info mb-4 edit-button", data: {confirm: "Are you sure ?"} %>
+              <% end %>
+            </div>
+          </div>
+          <div class="p-4 text-black" style="background-color: #f8f9fa;">
+            <div class="d-flex justify-content-end text-center py-1">
+              <div>
+                <p class="mb-1 h5"><%= @user.articles.count %></p>
+                <p class="small text-muted mb-0">Articles Count</p>
+              </div>
+            </div>
+          </div>
+          <div class="card-body p-4 text-black">
+            <div class="mb-5">
+              <p class="lead fw-normal mb-1">About</p>
+              <div class="p-4" style="background-color: #f8f9fa;">
+                <p class="font-italic mb-1">Some dummy about section that will come later as we upgrade the application.</p>
+              </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <p class="lead fw-normal mb-0">Articles</p>
+            </div>
+            <% if @user.articles.count == 0%> 
+              <p class="lead fw-normal mb-0">Articles coming soon !!!</p>
+            <% else %>
+              <div class="flickr_pagination">
+                <%= will_paginate @articles, :container => false %>
+              </div>
+              <%= render 'articles/article' %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<% end %>
-
-<h3 class="text-center mt-4">Articles</h3>
-
-<div class="flickr_pagination">
-  <%= will_paginate @articles, :container => false %>
-</div>
-
-<%= render 'articles/article' %>

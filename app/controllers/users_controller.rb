@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
   include ApplicationHelper
-  before_action :find_user, only: [:edit, :update, :show] 
+  before_action :find_user, only: [:edit, :update, :show, :destroy] 
+  before_action :require_login, except: [:show, :index, :create, :new]
+  before_action :same_user_required, only: [:edit, :update] 
+
   def new
     @user = User.new
   end
@@ -39,6 +42,18 @@ class UsersController < ApplicationController
     @users = User.paginate(page: params[:page], per_page: 5)
   end
 
+  def destroy
+    user_status = @user.destroy
+    if user_status
+      flash[:alert] = "User has been deleted"
+      session[:user_id] = nil
+      redirect_to root_path
+    else
+      flash[:alert] = "Something bad happened. Please retry the action."
+      render 'new'
+    end
+  end
+
   private
   def user_params
     params.require(:user).permit(:username, :email, :password)
@@ -46,5 +61,12 @@ class UsersController < ApplicationController
 
   def find_user
     @user = User.find(params[:id])
+  end
+
+  def same_user_required
+    if @user != current_user
+      flash[:alert] = "You are not authorised to do this action."
+      redirect_to root_path
+    end
   end
 end
