@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   post 'login', to: 'auth#create'
   delete 'logout', to: 'auth#destroy'
   resources :users, except: [:new]
+  resources :categories, except: [:destroy]
   resources :articles, only: [:show, :index, :new, :create, :edit, :update, :destroy]
 end
