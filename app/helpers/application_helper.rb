@@ -13,6 +13,10 @@ module ApplicationHelper
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
+  def same_user_or_admin(user)
+    current_user == user || current_user.is_admin
+  end
+
   def logged_in?
     !!current_user
   end

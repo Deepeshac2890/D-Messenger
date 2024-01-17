@@ -43,11 +43,16 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    is_same_user_logged_in = @user == current_user
     user_status = @user.destroy
     if user_status
       flash[:alert] = "User has been deleted"
-      session[:user_id] = nil
-      redirect_to root_path
+      if is_same_user_logged_in
+        session[:user_id] = nil
+        redirect_to root_path
+      else
+        redirect_back(fallback_location: root_path)
+      end
     else
       flash[:alert] = "Something bad happened. Please retry the action."
       render 'new'
