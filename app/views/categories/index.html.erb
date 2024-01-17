@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+
+<section class="pt-8 pt-md-9">
+    <div class="container">
+      <!-- Categories -->
+      <div class="row mt-6">
+        <div class="col-12 mb-4">
+          <span class="badge bg-pastel-primary text-primary text-uppercase-bold-sm">
+            Article Categories
+          </span>
+        </div>
+
+        <% @categories.each do |category| %>
+          <div class="col-md-3 mb-4">
+            <a href=<%= category_path(category) %> class="card align-items-center text-decoration-none border-0 hover-lift-light py-4">
+              <span class="icon-circle icon-circle-lg bg-pastel-primary text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><title>ionicons-v5-c</title><polyline points="352 144 464 144 464 256" style="fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"></polyline><path d="M48,368,169.37,246.63a32,32,0,0,1,45.26,0l50.74,50.74a32,32,0,0,0,45.26,0L448,160" style="fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"></path></svg>
+              </span>
+              <span class="text-dark mt-3">
+                <%= category.name %>
+              </span>
+            </a>
+          </div>
+        <% end %>
+      </div>
+      <div class="flickr_pagination">
+        <%= will_paginate @users, :container => false %>
+      </div>
+    </div>
+  </section>

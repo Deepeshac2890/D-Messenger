@@ -20,6 +20,9 @@
           <%= link_to "View articles", articles_path, class: "dropdown-item" %>
         </div>
       </li>
+      <li class="nav-item">
+        <%= link_to "Categories", categories_path, class: "nav-link" %>
+      </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -41,6 +44,9 @@
     <% else %>
       <div class="nav-item">
           <%=link_to "Login", login_path, class: "btn btn-outline-success my-2 my-sm-0"%>
+      </div>
+      <div class="nav-item ml-2">
+          <%=link_to "Sign Up", signup_path, class: "btn btn-outline-success my-2 my-sm-0"%>
       </div>
     <% end %>
   </div>
