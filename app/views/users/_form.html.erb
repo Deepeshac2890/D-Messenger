@@ -1,36 +1,39 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-10">
-      <%= render 'shared/errors', obj: @user %>
-      <%= form_with(model: @user, class: "shadow p-3 mb-3 bg-info rounded", local: true) do |f| %>
-        <div class="form-group row">
-          <%= f.label :username, class: "col-2 col-form-label text-light" %>
-          <div class="col-10">
-            <%= f.text_field :username, class: "form-control shadow rounded", placeholder: "Enter a username" %>
+<section class="vh-100 bg-image"
+  style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+  <%= render 'shared/errors', obj: @user %>
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5"><%= @user.new_record? ? "Create an account" : "Update Account" %></h2>
+
+              <%= form_with(model: @user, local: true) do |f| %>
+                <div class="form-outline mb-4">
+                  <%= f.text_field :username, class: "form-control shadow rounded", placeholder: "Enter a username" %>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <%= f.email_field :email, class: "form-control shadow rounded", placeholder: "Enter your email address" %>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <%= f.password_field :password, class: "form-control shadow rounded", placeholder: "Choose a password" %>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                    <%= f.submit(@user.new_record? ? "Sign up" : "Update account", class: "btn btn-outline-dark btn-lg") %>
+                </div>
+                <% if @user.new_record? %>
+                  <p class="text-center text-muted mt-4 mb-0">Have already an account? <a href=<%= login_path %>
+                    class="fw-bold text-body"><u>Login here</u></a></p>
+                <% end %>
+              <% end %>
+            </div>
           </div>
         </div>
-
-        <div class="form-group row">
-          <%= f.label :email, class: "col-2 col-form-label text-light" %>
-          <div class="col-10"> 
-            <%= f.email_field :email, class: "form-control shadow rounded", placeholder: "Enter your email address" %>
-          </div>
-        </div>
-
-        <div class="form-group row">
-          <%= f.label :password, class: "col-2 col-form-label text-light" %>
-          <div class="col-10"> 
-            <%= f.password_field :password, class: "form-control shadow rounded", placeholder: "Choose a password" %>
-          </div>
-        </div>
-
-        <div class="form-group row justify-content-center">
-          <%= f.submit(@user.new_record? ? "Sign up" : "Update account", class: "btn btn-outline-light btn-lg") %>
-        </div>
-      <% end %>
-    </div>
-    <div class="mb-3">
-      <%= link_to '[ Cancel and return to articles listing ]', articles_path, class: "text-info" %>
+      </div>
     </div>
   </div>
-</div>
+</section>
