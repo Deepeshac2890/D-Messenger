@@ -1,3 +1,8 @@
+
+<div class="flickr_pagination mt-4">
+  <%= will_paginate @users, :container => false %>
+</div>
+
 <div class="container mt-4">
   <% @users.each_slice(3) do |users_slice| %>
     <div class="row justify-content-md-center">
@@ -36,8 +41,4 @@
       <% end %>
     </div>
   <% end %>
-</div>
-
-<div class="flickr_pagination">
-  <%= will_paginate @users, :container => false %>
 </div>
