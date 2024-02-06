@@ -1,0 +1,9 @@
+<li class="clearfix">
+  <img src=<%= userObj.profile_image != nil ? userObj.profile_image : "https://bootdey.com/img/Content/avatar/avatar7.png" %> alt="avatar">
+  <div class="about">
+    <div class="name"><%= userObj.username%></div>
+    <div class="status"> <i class="fa fa-circle online"></i> online </div>
+    <%# Need to add this in else when user is modified  %>
+    <%# <div class="status"> <i class="fa fa-circle offline"></i> left 7 mins ago </div> %>
+  </div>
+</li>

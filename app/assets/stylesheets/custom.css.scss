@@ -540,3 +540,20 @@ body{margin-top:20px;
         overflow-x: auto
     }
 }
+
+.form-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-group .form-control .btn {
+  height: 100%;
+  border: none !important;
+  padding: 0 !important;
+  // margin-right: 10px; /* Add some space between the text field and the button */
+}
+
+textarea {
+  resize: vertical;
+}

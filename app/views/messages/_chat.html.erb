@@ -1,0 +1,17 @@
+<li class="clearfix">
+  <% if messageObj.user == current_user %>
+    <div class="message-data text-right">
+      <span class="message-data-time">10:10 AM, Today </span>
+      <img src=<%= messageObj.user.profile_image != nil ? messageObj.user.profile_image : "https://bootdey.com/img/Content/avatar/avatar7.png" %> alt="avatar">
+    </div>
+    <div class="message other-message float-right"> 
+      <%= messageObj.message.gsub("\n", "<br>").html_safe %>
+    </div>
+  <% else %>
+    <div class="message-data">
+      <span class="message-data-time"> <%= messageObj.user.username %> </span>
+      <img src=<%= messageObj.user.profile_image != nil ? messageObj.user.profile_image : "https://bootdey.com/img/Content/avatar/avatar7.png" %> alt="avatar">
+    </div>
+    <div class="message my-message"><%= messageObj.message%></div>
+  <% end %>
+</li>

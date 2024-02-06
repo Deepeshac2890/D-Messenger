@@ -1,6 +1,10 @@
 class AuthController < ApplicationController
+
   def new
-    
+    if (current_user != nil) 
+      flash[:notice] = "Already logged in."
+      redirect_to groupChat_path
+    end
   end
 
   def create
