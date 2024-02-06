@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_02_03_053832) do
+ActiveRecord::Schema.define(version: 2024_02_06_060640) do
 
   create_table "article_categories", force: :cascade do |t|
     t.integer "article_id"
@@ -32,6 +32,15 @@ ActiveRecord::Schema.define(version: 2024_02_03_053832) do
     t.string "category_image_url"
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.text "message"
+    t.integer "from_user_id"
+    t.integer "to_user_id"
+    t.boolean "delivered"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.datetime "created_at", precision: 6, null: false
@@ -43,4 +52,5 @@ ActiveRecord::Schema.define(version: 2024_02_03_053832) do
     t.boolean "is_admin", default: false
   end
 
+  add_foreign_key "messages", "users", column: "from_user_id"
 end
