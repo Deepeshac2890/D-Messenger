@@ -1,39 +1,47 @@
-<div class="h-100 gradient-custom-2">
-  <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col col-lg-9 col-xl-7">
-        <div class="card">
-          <div class="rounded-top text-white d-flex flex-row" style="background: url('https://amymhaddad.s3.amazonaws.com/oriental-tiles.png'); height:200px;">
-            <div class="ms-4 mt-5 mr-4 d-flex flex-column" style="width: 150px;">
-              <img src=<%= gravatar_link(@user.email)%>
-                alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
+<%= stylesheet_link_tag "profile" %>
+
+<div class="box background-full" id="wrapper">
+  <div id="overlay">
+    <div id="center">
+      <img src=<%= @user.profile_image == nil ? gravatar_link(@user.email) : @user.profile_image %>
+                alt="Generic placeholder image" class="image img-fluid img-thumbnail mt-4 mb-2"
                 style="width: 150px; z-index: 1">
-            </div>
-            <div class="ms-3" style="margin-top: 120px; margin-bottom: 100px;">
-              <div class="d-flex flex-row">
-                <h5><%= @user.username%></h5>
-                <% if @user.is_admin %>
-                  <div class="badge"> <span>Admin</span> </div>
-                <% end %>
-              </div>
-              <% if logged_in? && current_user.id == @user.id%>
-                <%= link_to "Edit Profile", edit_user_path(@user), class: "btn btn-outline-info mb-4 edit-button" %>
-              <% end %>
-              <% if logged_in? && current_user.id == @user.id%>
-                <%= link_to "Delete Profile", user_path(@user), method: :delete, class: "btn btn-outline-info mb-4 edit-button", data: {confirm: "Are you sure ?"} %>
-              <% end %>
-            </div>
-          </div>
-          <div class="card-body p-4 text-black">
-            <div class="mb-5">
-              <p class="lead fw-normal mb-1">About</p>
-              <div class="p-4" style="background-color: #f8f9fa;">
-                <p class="font-italic mb-1">Some dummy about section that will come later as we upgrade the application.</p>
-              </div>
-            </div>
+      <div class="trick"></div>
+    </div>
+    <ul class="text"><%= @user.username%></ul>
+    <div class="text1"><%= @user.email%></div>
+    <div class="panel-group mt-4" id="accordion" role="tablist" aria-multiselectable="true">
+      <div class="panel panel-default">
+        <div class="panel-heading " role="tab" id="headingOne">
+          <h4 class="panel-title ">
+            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="" aria-controls="collapseOne">
+              <div class="title  btn btn-danger btn-outline btn-lg">About</div>
+            </a>
+          </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body mb-4">
+            <%= @user.about != nil ? @user.about : "Nothing to show here!!"%>
           </div>
         </div>
       </div>
+      <% if logged_in? && current_user.id == @user.id %>
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingThree">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <div class="title btn btn-danger btn-outline btn-lg">Actions</div>
+              </a>
+            </h4>
+          </div>
+          <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+            <div class="panel-body">
+              <%= link_to "Edit Profile", edit_user_path(@user), class: "btn btn-outline-info mb-4 edit-button" %>
+              <%= link_to "Delete Profile", user_path(@user), method: :delete, class: "btn btn-outline-info mb-4 edit-button", data: {confirm: "Are you sure ?"} %>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
