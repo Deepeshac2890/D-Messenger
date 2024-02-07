@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
   before_action :require_login
 
   def groupChat
-    @messages = Message.all
+    @messages = Message.custom_display
   end
 
   def create
