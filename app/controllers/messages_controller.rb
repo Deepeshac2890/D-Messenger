@@ -10,7 +10,6 @@ class MessagesController < ApplicationController
     message = Message.new(message: params[:message], user: current_user)
     if message.save
       ActionCable.server.broadcast "chatroom_channel", message: message_render(message)
-      # redirect_back fallback_location: root_path
     else
       # Do Nothing
     end

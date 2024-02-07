@@ -59693,3 +59693,530 @@ Started GET "/cable/" [WebSocket] for ::1 at 2024-02-07 12:30:27 +0530
 Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
 ChatroomChannel is transmitting the subscription confirmation
 ChatroomChannel is streaming from chatroom_channel
+Started GET "/groupChat" for ::1 at 2024-02-07 12:34:57 +0530
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MessagesController#groupChat as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:13:in `current_user'
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT ?[0m  [["LIMIT", 20]]
+  ↳ app/models/message.rb:4:in `block in <class:Message>'
+  Rendering messages/groupChat.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/messages/groupChat.html.erb:30
+  Rendered messages/_chatUser.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered messages/_chatUser.html.erb (Duration: 0.0ms | Allocations: 12)
+  Rendered messages/_chatUser.html.erb (Duration: 0.0ms | Allocations: 12)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_chat.html.erb:2
+  Rendered messages/_chat.html.erb (Duration: 0.9ms | Allocations: 1549)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_chat.html.erb:2
+  Rendered messages/_chat.html.erb (Duration: 0.4ms | Allocations: 720)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_chat.html.erb:2
+  Rendered messages/_chat.html.erb (Duration: 0.4ms | Allocations: 720)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_chat.html.erb:2
+  Rendered messages/_chat.html.erb (Duration: 0.4ms | Allocations: 721)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_chat.html.erb:2
+  Rendered messages/_chat.html.erb (Duration: 0.4ms | Allocations: 720)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_chat.html.erb:2
+  Rendered messages/_chat.html.erb (Duration: 0.4ms | Allocations: 720)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/messages/_chat.html.erb:2
+  Rendered messages/_chat.html.erb (Duration: 0.4ms | Allocations: 720)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/messages/_chat.html.erb:2
+  Rendered messages/_chat.html.erb (Duration: 0.4ms | Allocations: 719)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/messages/_chat.html.erb:2
+  Rendered messages/_chat.html.erb (Duration: 0.5ms | Allocations: 719)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/messages/_chat.html.erb:2
+  Rendered messages/_chat.html.erb (Duration: 0.5ms | Allocations: 719)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/messages/_chat.html.erb:2
+  Rendered messages/_chat.html.erb (Duration: 3.3ms | Allocations: 719)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/messages/_chat.html.erb:2
+  Rendered messages/_chat.html.erb (Duration: 0.4ms | Allocations: 719)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/messages/_chat.html.erb:2
+  Rendered messages/_chat.html.erb (Duration: 0.4ms | Allocations: 719)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/messages/_chat.html.erb:2
+  Rendered messages/_chat.html.erb (Duration: 0.5ms | Allocations: 719)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/messages/_chat.html.erb:2
+  Rendered messages/_chat.html.erb (Duration: 0.4ms | Allocations: 719)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/messages/_chat.html.erb:2
+  Rendered messages/_chat.html.erb (Duration: 0.4ms | Allocations: 719)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_chat.html.erb:2
+  Rendered messages/_chat.html.erb (Duration: 0.4ms | Allocations: 720)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_chat.html.erb:2
+  Rendered messages/_chat.html.erb (Duration: 0.5ms | Allocations: 720)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_chat.html.erb:2
+  Rendered messages/_chat.html.erb (Duration: 0.4ms | Allocations: 720)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/messages/_chat.html.erb:2
+  Rendered messages/_chat.html.erb (Duration: 0.4ms | Allocations: 719)
+  Rendered messages/groupChat.html.erb within layouts/application (Duration: 13.8ms | Allocations: 18002)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 337)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 41)
+Completed 200 OK in 34ms (Views: 21.9ms | ActiveRecord: 1.3ms | Allocations: 35612)
+
+
+Started GET "/cable" for ::1 at 2024-02-07 12:34:57 +0530
+Started GET "/cable/" [WebSocket] for ::1 at 2024-02-07 12:34:57 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatroomChannel is transmitting the subscription confirmation
+ChatroomChannel is streaming from chatroom_channel
+Started GET "/" for ::1 at 2024-02-07 12:35:02 +0530
+Processing by SharedController#home as HTML
+  Rendering shared/home.html.erb within layouts/application
+  Rendered shared/home.html.erb within layouts/application (Duration: 0.4ms | Allocations: 69)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:13:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 2.3ms | Allocations: 931)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 20)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 41)
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.2ms | Allocations: 6903)
+
+
+Started GET "/cable" for ::1 at 2024-02-07 12:35:27 +0530
+Started GET "/cable/" [WebSocket] for ::1 at 2024-02-07 12:35:27 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatroomChannel is transmitting the subscription confirmation
+ChatroomChannel is streaming from chatroom_channel
+Started GET "/" for ::1 at 2024-02-07 12:41:43 +0530
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SharedController#home as HTML
+  Rendering shared/home.html.erb within layouts/application
+  Rendered shared/home.html.erb within layouts/application (Duration: 0.7ms | Allocations: 311)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/deeachar/personal/rails/rails_5/D-Messenger/public/packs
+[Webpacker] Browserslist: caniuse-lite is outdated. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-transform-private-property-in-object since the "loose" mode option was set to "true" for @babel/plugin-transform-class-properties.
+The "loose" option must be the same for @babel/plugin-transform-class-properties, @babel/plugin-transform-private-methods and @babel/plugin-transform-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-transform-private-property-in-object", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-transform-private-methods since the "loose" mode option was set to "true" for @babel/plugin-transform-private-property-in-object.
+The "loose" option must be the same for @babel/plugin-transform-class-properties, @babel/plugin-transform-private-methods and @babel/plugin-transform-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-transform-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+
+[Webpacker] Hash: 6a710a541cadb07d34cd
+Version: webpack 4.46.0
+Time: 536ms
+Built at: 02/07/2024 12:41:45 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-1d1240ba1bf71d02239d.js    668 KiB  application  [emitted] [immutable]  application
+js/application-1d1240ba1bf71d02239d.js.map    774 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-1d1240ba1bf71d02239d.js js/application-1d1240ba1bf71d02239d.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 186 bytes {application} [built]
+[./app/javascript/channels/chatroom_channel.js] 603 bytes {application} [optional] [built]
+[./app/javascript/channels/consumer.js] 266 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 769 bytes {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} [built]
+    + 7 hidden modules
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:13:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 8.0ms | Allocations: 8435)
+  Rendered layouts/_messages.html.erb (Duration: 0.5ms | Allocations: 180)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 141)
+Completed 200 OK in 1751ms (Views: 1745.9ms | ActiveRecord: 0.5ms | Allocations: 22086)
+
+
+Started GET "/cable" for ::1 at 2024-02-07 12:41:45 +0530
+Started GET "/cable/" [WebSocket] for ::1 at 2024-02-07 12:41:45 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatroomChannel is transmitting the subscription confirmation
+ChatroomChannel is streaming from chatroom_channel
+Started GET "/cable" for ::1 at 2024-02-07 12:42:27 +0530
+Started GET "/cable/" [WebSocket] for ::1 at 2024-02-07 12:42:27 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatroomChannel is transmitting the subscription confirmation
+ChatroomChannel is streaming from chatroom_channel
+Started GET "/" for ::1 at 2024-02-07 12:42:32 +0530
+Processing by SharedController#home as HTML
+  Rendering shared/home.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:13:in `current_user'
+  Rendered shared/home.html.erb within layouts/application (Duration: 4.3ms | Allocations: 727)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 1.1ms | Allocations: 673)
+  Rendered layouts/_messages.html.erb (Duration: 0.4ms | Allocations: 166)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 135)
+Completed 200 OK in 35ms (Views: 30.0ms | ActiveRecord: 0.5ms | Allocations: 8442)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2024-02-07 12:42:32 +0530
+ChatroomChannel stopped streaming from chatroom_channel
+Started GET "/cable" for ::1 at 2024-02-07 12:42:32 +0530
+Started GET "/cable/" [WebSocket] for ::1 at 2024-02-07 12:42:32 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatroomChannel is transmitting the subscription confirmation
+ChatroomChannel is streaming from chatroom_channel
+Started GET "/" for ::1 at 2024-02-07 12:44:03 +0530
+Processing by SharedController#home as HTML
+  Rendering shared/home.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:13:in `current_user'
+  Rendered shared/home.html.erb within layouts/application (Duration: 1.6ms | Allocations: 727)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 673)
+  Rendered layouts/_messages.html.erb (Duration: 0.6ms | Allocations: 166)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 135)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.1ms | Allocations: 8415)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2024-02-07 12:44:03 +0530
+ChatroomChannel stopped streaming from chatroom_channel
+Started GET "/cable" for ::1 at 2024-02-07 12:44:03 +0530
+Started GET "/cable/" [WebSocket] for ::1 at 2024-02-07 12:44:03 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatroomChannel is transmitting the subscription confirmation
+ChatroomChannel is streaming from chatroom_channel
+Started GET "/" for ::1 at 2024-02-07 12:44:10 +0530
+Processing by SharedController#home as HTML
+  Rendering shared/home.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:13:in `current_user'
+  Rendered shared/home.html.erb within layouts/application (Duration: 2.2ms | Allocations: 726)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 1.6ms | Allocations: 673)
+  Rendered layouts/_messages.html.erb (Duration: 0.7ms | Allocations: 166)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 135)
+Completed 200 OK in 25ms (Views: 23.3ms | ActiveRecord: 0.2ms | Allocations: 8421)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2024-02-07 12:44:10 +0530
+ChatroomChannel stopped streaming from chatroom_channel
+Started GET "/cable" for ::1 at 2024-02-07 12:44:10 +0530
+Started GET "/cable/" [WebSocket] for ::1 at 2024-02-07 12:44:10 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatroomChannel is transmitting the subscription confirmation
+ChatroomChannel is streaming from chatroom_channel
+Started GET "/users" for ::1 at 2024-02-07 12:44:15 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/users/index.html.erb:7:in `each_slice'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ? OFFSET ?[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:7:in `each_slice'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:13:in `current_user'
+  Rendered users/index.html.erb within layouts/application (Duration: 21.4ms | Allocations: 5243)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 334)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 41)
+Completed 200 OK in 31ms (Views: 29.1ms | ActiveRecord: 0.4ms | Allocations: 11707)
+
+
+Started GET "/" for ::1 at 2024-02-07 12:44:16 +0530
+Processing by SharedController#home as HTML
+  Rendering shared/home.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:13:in `current_user'
+  Rendered shared/home.html.erb within layouts/application (Duration: 1.3ms | Allocations: 575)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 351)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 41)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.1ms | Allocations: 6334)
+
+
+Started GET "/" for ::1 at 2024-02-07 12:45:10 +0530
+Processing by SharedController#home as HTML
+  Rendering shared/home.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:13:in `current_user'
+  Rendered shared/home.html.erb within layouts/application (Duration: 3.6ms | Allocations: 716)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 1.1ms | Allocations: 649)
+  Rendered layouts/_messages.html.erb (Duration: 0.7ms | Allocations: 166)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 135)
+Completed 200 OK in 26ms (Views: 24.7ms | ActiveRecord: 0.3ms | Allocations: 8399)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2024-02-07 12:45:10 +0530
+ChatroomChannel stopped streaming from chatroom_channel
+Started GET "/cable" for ::1 at 2024-02-07 12:45:10 +0530
+Started GET "/cable/" [WebSocket] for ::1 at 2024-02-07 12:45:10 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatroomChannel is transmitting the subscription confirmation
+ChatroomChannel is streaming from chatroom_channel
+Started GET "/groupChat" for ::1 at 2024-02-07 12:45:12 +0530
+Processing by MessagesController#groupChat as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:13:in `current_user'
+  [1m[36mMessage Load (0.8ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT ?[0m  [["LIMIT", 20]]
+  ↳ app/models/message.rb:4:in `block in <class:Message>'
+  Rendering messages/groupChat.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/messages/groupChat.html.erb:30
+  Rendered messages/_chatUser.html.erb (Duration: 0.6ms | Allocations: 157)
+  Rendered messages/_chatUser.html.erb (Duration: 0.0ms | Allocations: 12)
+  Rendered messages/_chatUser.html.erb (Duration: 0.0ms | Allocations: 12)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_chat.html.erb:2
+  Rendered messages/_chat.html.erb (Duration: 4.8ms | Allocations: 2845)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_chat.html.erb:2
+  Rendered messages/_chat.html.erb (Duration: 0.5ms | Allocations: 720)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_chat.html.erb:2
+  Rendered messages/_chat.html.erb (Duration: 0.5ms | Allocations: 720)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_chat.html.erb:2
+  Rendered messages/_chat.html.erb (Duration: 0.4ms | Allocations: 721)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_chat.html.erb:2
+  Rendered messages/_chat.html.erb (Duration: 0.4ms | Allocations: 720)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_chat.html.erb:2
+  Rendered messages/_chat.html.erb (Duration: 0.4ms | Allocations: 720)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/messages/_chat.html.erb:2
+  Rendered messages/_chat.html.erb (Duration: 0.4ms | Allocations: 720)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/messages/_chat.html.erb:2
+  Rendered messages/_chat.html.erb (Duration: 0.4ms | Allocations: 719)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/messages/_chat.html.erb:2
+  Rendered messages/_chat.html.erb (Duration: 0.4ms | Allocations: 719)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/messages/_chat.html.erb:2
+  Rendered messages/_chat.html.erb (Duration: 0.5ms | Allocations: 719)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/messages/_chat.html.erb:2
+  Rendered messages/_chat.html.erb (Duration: 0.4ms | Allocations: 719)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/messages/_chat.html.erb:2
+  Rendered messages/_chat.html.erb (Duration: 0.4ms | Allocations: 719)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/messages/_chat.html.erb:2
+  Rendered messages/_chat.html.erb (Duration: 0.4ms | Allocations: 719)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/messages/_chat.html.erb:2
+  Rendered messages/_chat.html.erb (Duration: 0.4ms | Allocations: 719)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/messages/_chat.html.erb:2
+  Rendered messages/_chat.html.erb (Duration: 0.4ms | Allocations: 719)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/messages/_chat.html.erb:2
+  Rendered messages/_chat.html.erb (Duration: 0.4ms | Allocations: 719)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_chat.html.erb:2
+  Rendered messages/_chat.html.erb (Duration: 0.4ms | Allocations: 720)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_chat.html.erb:2
+  Rendered messages/_chat.html.erb (Duration: 0.4ms | Allocations: 720)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_chat.html.erb:2
+  Rendered messages/_chat.html.erb (Duration: 0.4ms | Allocations: 720)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/messages/_chat.html.erb:2
+  Rendered messages/_chat.html.erb (Duration: 0.4ms | Allocations: 719)
+  Rendered messages/groupChat.html.erb within layouts/application (Duration: 17.4ms | Allocations: 20198)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 290)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 41)
+Completed 200 OK in 41ms (Views: 22.9ms | ActiveRecord: 1.6ms | Allocations: 32468)
+
+
+Started GET "/" for ::1 at 2024-02-07 12:45:14 +0530
+Processing by SharedController#home as HTML
+  Rendering shared/home.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:13:in `current_user'
+  Rendered shared/home.html.erb within layouts/application (Duration: 1.4ms | Allocations: 575)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.4ms | Allocations: 306)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 41)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.2ms | Allocations: 6273)
+
+
+Started DELETE "/logout" for ::1 at 2024-02-07 12:45:16 +0530
+Processing by AuthController#destroy as HTML
+  Parameters: {"authenticity_token"=>"AwDPmLvRvdpX0tlXocITnHkqpCooYGcVM0u66XVqa1w2/eOpZBpb3z6KP7Ovsvb+gjeBN7IrIJWXo0q/CPbUUw=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 371)
+
+
+Started GET "/" for ::1 at 2024-02-07 12:45:16 +0530
+Processing by SharedController#home as HTML
+  Rendering shared/home.html.erb within layouts/application
+  Rendered shared/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 62)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 197)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 41)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.0ms | Allocations: 5692)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2024-02-07 12:45:16 +0530
+ChatroomChannel stopped streaming from chatroom_channel
+Started GET "/cable" for ::1 at 2024-02-07 12:45:16 +0530
+Started GET "/cable/" [WebSocket] for ::1 at 2024-02-07 12:45:16 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatroomChannel is transmitting the subscription confirmation
+ChatroomChannel is streaming from chatroom_channel
+Started GET "/" for ::1 at 2024-02-07 12:45:18 +0530
+Processing by SharedController#home as HTML
+  Rendering shared/home.html.erb within layouts/application
+  Rendered shared/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 61)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 196)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 41)
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.0ms | Allocations: 5631)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2024-02-07 12:45:18 +0530
+ChatroomChannel stopped streaming from chatroom_channel
+Started GET "/cable" for ::1 at 2024-02-07 12:45:18 +0530
+Started GET "/cable/" [WebSocket] for ::1 at 2024-02-07 12:45:18 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatroomChannel is transmitting the subscription confirmation
+ChatroomChannel is streaming from chatroom_channel
+Started GET "/groupChat" for ::1 at 2024-02-07 12:45:23 +0530
+Processing by MessagesController#groupChat as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 315)
+
+
+Started GET "/login" for ::1 at 2024-02-07 12:45:23 +0530
+Processing by AuthController#new as HTML
+  Rendering auth/new.html.erb within layouts/application
+  Rendered auth/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 902)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 200)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 49)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 41)
+Completed 200 OK in 18ms (Views: 16.3ms | ActiveRecord: 0.0ms | Allocations: 7152)
+
+
+Started GET "/" for ::1 at 2024-02-07 12:45:26 +0530
+Processing by SharedController#home as HTML
+  Rendering shared/home.html.erb within layouts/application
+  Rendered shared/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 68)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 200)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 41)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.0ms | Allocations: 5654)
+
+
+Started GET "/" for ::1 at 2024-02-07 12:45:48 +0530
+Processing by SharedController#home as HTML
+  Rendering shared/home.html.erb within layouts/application
+  Rendered shared/home.html.erb within layouts/application (Duration: 1.2ms | Allocations: 208)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 143.2ms | Allocations: 128907)
+Completed 500 Internal Server Error in 165ms (ActiveRecord: 0.0ms | Allocations: 135544)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `logged_in' for #<#<Class:0x0000000110a4df10>:0x0000000120893200>
+Did you mean?  logged_in?):
+     9:       <%# <li class="nav-item active"> %>
+    10:         <%# <%= link_to "Messages", users_path, class: "nav-link" %> 
+    11:       <%# </li>  %>
+    12:       <% if logged_in %>
+    13:       <li class="nav-item active">
+    14:         <%= link_to "Group Chat", groupChat_path, class: "nav-link" %>
+    15:       </li>
+  
+app/views/layouts/_navigation.html.erb:12
+app/views/layouts/application.html.erb:15
+Finished "/cable/" [WebSocket] for ::1 at 2024-02-07 12:45:49 +0530
+ChatroomChannel stopped streaming from chatroom_channel
+Started GET "/" for ::1 at 2024-02-07 12:45:56 +0530
+Processing by SharedController#home as HTML
+  Rendering shared/home.html.erb within layouts/application
+  Rendered shared/home.html.erb within layouts/application (Duration: 0.5ms | Allocations: 63)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 117.7ms | Allocations: 126032)
+Completed 500 Internal Server Error in 135ms (ActiveRecord: 0.0ms | Allocations: 131337)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `logged_in' for #<#<Class:0x0000000110a4df10>:0x000000013085c560>
+Did you mean?  logged_in?):
+     9:       <%# <li class="nav-item active"> %>
+    10:         <%# <%= link_to "Messages", users_path, class: "nav-link" %> 
+    11:       <%# </li>  %>
+    12:       <% if logged_in %>
+    13:       <li class="nav-item active">
+    14:         <%= link_to "Group Chat", groupChat_path, class: "nav-link" %>
+    15:       </li>
+  
+app/views/layouts/_navigation.html.erb:12
+app/views/layouts/application.html.erb:15
+Started GET "/" for ::1 at 2024-02-07 12:45:56 +0530
+Processing by SharedController#home as HTML
+  Rendering shared/home.html.erb within layouts/application
+  Rendered shared/home.html.erb within layouts/application (Duration: 1.1ms | Allocations: 203)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 2.6ms | Allocations: 528)
+  Rendered layouts/_messages.html.erb (Duration: 0.9ms | Allocations: 166)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 135)
+Completed 200 OK in 26ms (Views: 23.6ms | ActiveRecord: 0.0ms | Allocations: 7776)
+
+
+Started GET "/cable" for ::1 at 2024-02-07 12:45:57 +0530
+Started GET "/cable/" [WebSocket] for ::1 at 2024-02-07 12:45:57 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatroomChannel is transmitting the subscription confirmation
+ChatroomChannel is streaming from chatroom_channel
+Started GET "/" for ::1 at 2024-02-07 12:45:58 +0530
+Processing by SharedController#home as HTML
+  Rendering shared/home.html.erb within layouts/application
+  Rendered shared/home.html.erb within layouts/application (Duration: 0.4ms | Allocations: 66)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 158)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 41)
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.0ms | Allocations: 5588)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2024-02-07 12:45:58 +0530
+ChatroomChannel stopped streaming from chatroom_channel
+Started GET "/cable" for ::1 at 2024-02-07 12:45:58 +0530
+Started GET "/cable/" [WebSocket] for ::1 at 2024-02-07 12:45:58 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatroomChannel is transmitting the subscription confirmation
+ChatroomChannel is streaming from chatroom_channel
+Started GET "/" for ::1 at 2024-02-07 12:46:00 +0530
+Processing by SharedController#home as HTML
+  Rendering shared/home.html.erb within layouts/application
+  Rendered shared/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 61)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.4ms | Allocations: 155)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 41)
+Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.0ms | Allocations: 5584)
+
+

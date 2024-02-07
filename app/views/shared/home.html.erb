@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  </head>
+
+  <body>
+
+  <div class="container" id="home-container">
+    <div class="jumbotron text-center text-white">
+      <h1 class="display-4">D-Messenger</h1>
+      <p class="lead">Hello there! Welcome to D-Messenger, your new go-to group chat application. Designed with simplicity and ease-of-use in mind, D-Messenger allows seamless communication and collaboration with friends, family, or work teams. Connect, share, and experience the joy of staying in touch with the people that matter most to you. Ready to get started? Let's dive into the world of effortless communication with D-Messenger.</p>
+      <% if current_user == nil%>
+        <%= link_to "Sign Up!", signup_path, class: "btn btn-success btn-lg"%>
+      <% end %>
+    </div>
+  </div>
+  </body>
+</html>

@@ -11,11 +11,9 @@ consumer.subscriptions.create("ChatroomChannel", {
 
   received(data) {
     // Called when there's incoming data on the websocket for this channel
+    // Option 1 : Render using the partial 
     // $('#chatHistory').append(data.message)
+    // Option 2 : Reload the page this solves more issues.
     location.reload()
-    // var list = document.getElementById('chatHistory');
-    // if (list) {
-    //   list.scrollTop = list.scrollHeight;
-    // }
   }
 });
